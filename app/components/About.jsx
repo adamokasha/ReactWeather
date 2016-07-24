@@ -12,10 +12,10 @@ var About = (props) => {
       </p>
       <ul>
         <li>
-          <a href="https://facebook.github.io/react">React</a> - This was the JavaScript framework used
+          <a href="https://facebook.github.io/react" target="_blank">React</a> - This was the JavaScript framework used
         </li>
         <li>
-          <a href="http://openweathermap.org">Open Weather Map</a> - I used Open Weather Map to search for weather data by city name
+          <a href="http://openweathermap.org" target="_blank">Open Weather Map</a> - I used Open Weather Map to search for weather data by city name
         </li>
       </ul>
       <a href="https://github.com/samokasha/ReactWeather" target="_blank">GitHub Repo</a>
