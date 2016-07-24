@@ -10,6 +10,6 @@ var Nav = (props) => {
       <Link to="/examples" activeClassName='active' activeStyle={{fontWeight: 'bold'}}>Examples</Link>
     </div>
   );
-};
+}
 
 module.exports = Nav;

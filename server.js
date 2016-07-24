@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 // Fix for openweathermap API which only operates on HTTP not HTTPS
 // Redirect all HTTPS traffic to HTTP
 app.use(function (req, res, next) {
-  if (req.headers['x-forwarded-proto'] = 'http') {
+  if (req.headers['x-forwarded-proto'] === 'http') {
     next();
   } else {
     res.redirect('http://' + req.hostname + req.url);
