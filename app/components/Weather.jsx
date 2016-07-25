@@ -15,7 +15,9 @@ var Weather = React.createClass({
 
     this.setState({
       isLoading: true,
-      errorMessage: undefined
+      errorMessage: undefined,
+      location: undefined,
+      temp: undefined
     });
 
     openWeatherMap.getTemp(location).then(function (temp) {
@@ -30,6 +32,30 @@ var Weather = React.createClass({
         errorMessage: e.message
       });
     });
+  },
+  componentDidMount: function () {
+    // Pull out location from url (ie. from Examples)
+    // React-router gives access to query strings props (last location is in the url)
+    var location = this.props.location.query.location;
+
+    if (location && location.length > 0) {
+      this.handleSearch(location);
+
+      // remove location query string
+      window.location.hash= '#/';
+    }
+  },
+  // called anytime component's props gets update
+  // react router will automatically update the props when url changes
+  componentWillReceiveProps: function (newProps) {
+    var location = newProps.location.query.location;
+
+    if (location && location.length > 0) {
+      this.handleSearch(location);
+
+      // remove location query string
+      window.location.hash= '#/';
+    }
   },
   render: function () {
     // ES6 destructuring, state was set in handleSearch
