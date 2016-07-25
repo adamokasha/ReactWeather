@@ -46,7 +46,7 @@ var Weather = React.createClass({
     }
   },
   // called anytime component's props gets update
-  // react router will automatically update the props when url changes
+  // react-router will automatically update the props when url changes
   componentWillReceiveProps: function (newProps) {
     var location = newProps.location.query.location;
 
